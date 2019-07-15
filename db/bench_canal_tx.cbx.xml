@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="bench_canal_tx">
+		<CBX_INST_ENTRY INSTANCE_NAME="|bench_canal_tx|canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0" CBX_FILE_NAME="shift_taps_c4n.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component" CBX_FILE_NAME="scfifo_7p21.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

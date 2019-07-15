@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Jul 15 01:15:50 2019
+Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
+Revision Name : bench_canal_tx
+Top-level Entity Name : bench_canal_tx
+Family : Cyclone II
+Total logic elements : 425
+    Total combinational functions : 387
+    Dedicated logic registers : 325
+Total registers : 325
+Total pins : 11
+Total virtual pins : 0
+Total memory bits : 1,578
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

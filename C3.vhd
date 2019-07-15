@@ -1,0 +1,44 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_arith.ALL;
+USE ieee.std_logic_unsigned.ALL;
+--/*THIS UNIT COUNTS THE BYTE NUMBERS OF THE INFOMATION COMING TO FIFO
+--  AND GETS THE SIZE OF THE TRAM THROUGH BYTE 13 AND 14 */ 
+ENTITY C3 IS
+
+	PORT
+	(
+		H, INC3, Raz3 : IN std_logic;
+		C3eq13, C3eq14 : OUT std_logic;
+		C3out : OUT std_logic_vector(15 DOWNTO 0)
+	);
+
+END ENTITY;
+ARCHITECTURE AC3 OF C3 IS
+	SIGNAL counter : std_logic_vector(15 DOWNTO 0);
+BEGIN
+
+	PROCESS (H, INC3, Raz3)
+
+	BEGIN
+
+		IF (Raz3 = '1') THEN
+			counter <= (OTHERS => '0');
+		ELSIF Rising_edge(H) THEN 
+			IF (INC3 = '1') THEN
+				counter <= counter + 1;
+			END IF;
+			IF (counter = 13) THEN
+				C3eq13 <= '1';
+			ELSE
+				C3eq13 <= '0';
+			END IF;
+			IF (counter = 14) THEN
+				C3eq14 <= '1';
+			ELSE
+				C3eq14 <= '0';
+			END IF;
+		END IF;
+	END PROCESS;
+	C3out <= counter;
+END ARCHITECTURE;

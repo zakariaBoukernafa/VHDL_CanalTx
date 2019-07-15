@@ -1,0 +1,30 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+USE ieee.std_logic_arith.ALL;
+
+ENTITY p_emetteur IS
+	PORT
+	(
+		H, R, dec_pr, Init_pr : IN std_logic;
+		pr : OUT std_logic);
+END p_emetteur;
+ARCHITECTURE ap_emetteur OF p_emetteur IS
+	SIGNAL container : std_logic_vector (143 DOWNTO 0);
+BEGIN
+	PROCESS (H, R, Init_pr, dec_pr)
+	BEGIN
+		IF R = '1' THEN
+			container <= (OTHERS => '0');
+		ELSIF rising_edge(H) THEN
+			IF (Init_pr = '1') THEN
+				container <= x"666566666666666666666666666666666666";
+				--011001100110010101100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110011001100110
+			ELSIF dec_pr = '1' THEN
+				pr <= container(0);
+				container <= ('0' & container(143 DOWNTO 1));
+
+			END IF;
+		END IF;
+	END PROCESS;
+END ARCHITECTURE;

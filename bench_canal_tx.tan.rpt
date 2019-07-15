@@ -1,0 +1,467 @@
+Classic Timing Analyzer report for bench_canal_tx
+Mon Jul 15 01:16:11 2019
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clk'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                              ;
++------------------------------+-------+---------------+----------------------------------+-----------------------+---------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                  ; To                                          ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-----------------------+---------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 1.943 ns                         ; reset                 ; canal_tx:comp2|p_emetteur:U4|pr             ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 13.191 ns                        ; data_16[5]            ; recu                                        ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -0.809 ns                        ; reset                 ; canal_tx:comp2|RegOut:U6|Tx                 ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 137.63 MHz ( period = 7.266 ns ) ; canal_tx:comp2|dec_pr ; canal_tx:comp2|p_emetteur:U4|container[119] ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                       ;                                             ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-----------------------+---------------------------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP2C50F484C8       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                               ;
++-----------------------------------------+-----------------------------------------------------+------------------------+---------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                   ; To                                          ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+------------------------+---------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[104] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[105] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[106] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[107] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[108] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[109] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[110] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[111] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[112] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[113] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[114] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[115] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[116] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[117] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[118] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.63 MHz ( period = 7.266 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[119] ; clk        ; clk      ; None                        ; None                      ; 3.356 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[104] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[105] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[106] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[107] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[108] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[109] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[110] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[111] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[112] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[113] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[114] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[115] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[116] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[117] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[118] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[119] ; clk        ; clk      ; None                        ; None                      ; 3.350 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[120] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[121] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[122] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[123] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[124] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[125] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[126] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[127] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[128] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[129] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[130] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[131] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[132] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[133] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[134] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 137.85 MHz ( period = 7.254 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[135] ; clk        ; clk      ; None                        ; None                      ; 3.352 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[40]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[41]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[42]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[43]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[44]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[45]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[46]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[47]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[48]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[49]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[50]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[51]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[52]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[53]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[54]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.05 MHz ( period = 7.244 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[55]  ; clk        ; clk      ; None                        ; None                      ; 3.349 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[120] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[121] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[122] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[123] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[124] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[125] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[126] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[127] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[128] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[129] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[130] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[131] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[132] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[133] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[134] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.08 MHz ( period = 7.242 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[135] ; clk        ; clk      ; None                        ; None                      ; 3.346 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[40]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[41]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[42]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[43]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[44]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[45]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[46]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[47]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[48]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[49]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[50]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[51]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[52]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[53]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[54]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.27 MHz ( period = 7.232 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[55]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.35 MHz ( period = 7.228 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[34]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.35 MHz ( period = 7.228 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[35]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.35 MHz ( period = 7.228 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[36]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.35 MHz ( period = 7.228 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[37]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.35 MHz ( period = 7.228 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[38]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.35 MHz ( period = 7.228 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[39]  ; clk        ; clk      ; None                        ; None                      ; 3.343 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[18]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[19]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[20]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[21]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[22]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[23]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[24]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[25]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[26]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[27]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[28]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[29]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[30]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[31]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[32]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.54 MHz ( period = 7.218 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[33]  ; clk        ; clk      ; None                        ; None                      ; 3.340 ns                ;
+; N/A                                     ; 138.58 MHz ( period = 7.216 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[34]  ; clk        ; clk      ; None                        ; None                      ; 3.337 ns                ;
+; N/A                                     ; 138.58 MHz ( period = 7.216 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[35]  ; clk        ; clk      ; None                        ; None                      ; 3.337 ns                ;
+; N/A                                     ; 138.58 MHz ( period = 7.216 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[36]  ; clk        ; clk      ; None                        ; None                      ; 3.337 ns                ;
+; N/A                                     ; 138.58 MHz ( period = 7.216 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[37]  ; clk        ; clk      ; None                        ; None                      ; 3.337 ns                ;
+; N/A                                     ; 138.58 MHz ( period = 7.216 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[38]  ; clk        ; clk      ; None                        ; None                      ; 3.337 ns                ;
+; N/A                                     ; 138.58 MHz ( period = 7.216 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[39]  ; clk        ; clk      ; None                        ; None                      ; 3.337 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[18]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[19]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[20]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[21]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[22]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[23]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[24]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[25]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[26]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[27]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[28]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[29]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[30]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[31]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[32]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.77 MHz ( period = 7.206 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[33]  ; clk        ; clk      ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[88]  ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[89]  ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[90]  ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[91]  ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[92]  ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[93]  ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[94]  ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[95]  ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[96]  ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[97]  ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[98]  ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[99]  ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[100] ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[101] ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[102] ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.89 MHz ( period = 7.200 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[103] ; clk        ; clk      ; None                        ; None                      ; 3.332 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[72]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[73]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[74]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[75]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[76]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[77]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[78]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[79]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[80]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[81]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[82]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[83]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[84]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[85]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[86]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 138.93 MHz ( period = 7.198 ns )                    ; canal_tx:comp2|dec_pr  ; canal_tx:comp2|p_emetteur:U4|container[87]  ; clk        ; clk      ; None                        ; None                      ; 3.333 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[88]  ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[89]  ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[90]  ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[91]  ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[92]  ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[93]  ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[94]  ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[95]  ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[96]  ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[97]  ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[98]  ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[99]  ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[100] ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[101] ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[102] ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.12 MHz ( period = 7.188 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[103] ; clk        ; clk      ; None                        ; None                      ; 3.326 ns                ;
+; N/A                                     ; 139.16 MHz ( period = 7.186 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[75]  ; clk        ; clk      ; None                        ; None                      ; 3.327 ns                ;
+; N/A                                     ; 139.16 MHz ( period = 7.186 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[76]  ; clk        ; clk      ; None                        ; None                      ; 3.327 ns                ;
+; N/A                                     ; 139.16 MHz ( period = 7.186 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[77]  ; clk        ; clk      ; None                        ; None                      ; 3.327 ns                ;
+; N/A                                     ; 139.16 MHz ( period = 7.186 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[78]  ; clk        ; clk      ; None                        ; None                      ; 3.327 ns                ;
+; N/A                                     ; 139.16 MHz ( period = 7.186 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[79]  ; clk        ; clk      ; None                        ; None                      ; 3.327 ns                ;
+; N/A                                     ; 139.16 MHz ( period = 7.186 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[80]  ; clk        ; clk      ; None                        ; None                      ; 3.327 ns                ;
+; N/A                                     ; 139.16 MHz ( period = 7.186 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[81]  ; clk        ; clk      ; None                        ; None                      ; 3.327 ns                ;
+; N/A                                     ; 139.16 MHz ( period = 7.186 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[82]  ; clk        ; clk      ; None                        ; None                      ; 3.327 ns                ;
+; N/A                                     ; 139.16 MHz ( period = 7.186 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[83]  ; clk        ; clk      ; None                        ; None                      ; 3.327 ns                ;
+; N/A                                     ; 139.16 MHz ( period = 7.186 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[84]  ; clk        ; clk      ; None                        ; None                      ; 3.327 ns                ;
+; N/A                                     ; 139.16 MHz ( period = 7.186 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[85]  ; clk        ; clk      ; None                        ; None                      ; 3.327 ns                ;
+; N/A                                     ; 139.16 MHz ( period = 7.186 ns )                    ; canal_tx:comp2|init_pr ; canal_tx:comp2|p_emetteur:U4|container[86]  ; clk        ; clk      ; None                        ; None                      ; 3.327 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                        ;                                             ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+------------------------+---------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; tsu                                                                                    ;
++-------+--------------+------------+-------+---------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To                              ; To Clock ;
++-------+--------------+------------+-------+---------------------------------+----------+
+; N/A   ; None         ; 1.943 ns   ; reset ; canal_tx:comp2|p_emetteur:U4|pr ; clk      ;
+; N/A   ; None         ; 1.921 ns   ; reset ; canal_tx:comp2|RegOut:U6|sof    ; clk      ;
+; N/A   ; None         ; 1.843 ns   ; reset ; canal_tx:comp2|RegOut:U6|eof    ; clk      ;
+; N/A   ; None         ; 1.075 ns   ; reset ; canal_tx:comp2|RegOut:U6|Tx     ; clk      ;
++-------+--------------+------------+-------+---------------------------------+----------+
+
+
++-------------------------------------------------------------------------------+
+; tco                                                                           ;
++-------+--------------+------------+-----------------+------------+------------+
+; Slack ; Required tco ; Actual tco ; From            ; To         ; From Clock ;
++-------+--------------+------------+-----------------+------------+------------+
+; N/A   ; None         ; 13.191 ns  ; data_16[5]      ; recu       ; clk        ;
+; N/A   ; None         ; 13.116 ns  ; data_16[7]      ; recu       ; clk        ;
+; N/A   ; None         ; 13.064 ns  ; data_16[3]      ; recu       ; clk        ;
+; N/A   ; None         ; 13.036 ns  ; data_16[1]      ; recu       ; clk        ;
+; N/A   ; None         ; 12.992 ns  ; data_16[13]     ; recu       ; clk        ;
+; N/A   ; None         ; 12.942 ns  ; data_16[6]      ; recu       ; clk        ;
+; N/A   ; None         ; 12.913 ns  ; data_16[11]     ; recu       ; clk        ;
+; N/A   ; None         ; 12.899 ns  ; data_16[4]      ; recu       ; clk        ;
+; N/A   ; None         ; 12.886 ns  ; data_16[15]     ; recu       ; clk        ;
+; N/A   ; None         ; 12.883 ns  ; data_16[2]      ; recu       ; clk        ;
+; N/A   ; None         ; 12.848 ns  ; data_16[0]      ; recu       ; clk        ;
+; N/A   ; None         ; 12.739 ns  ; data_16[10]     ; recu       ; clk        ;
+; N/A   ; None         ; 12.700 ns  ; data_16[12]     ; recu       ; clk        ;
+; N/A   ; None         ; 12.697 ns  ; data_16[9]      ; recu       ; clk        ;
+; N/A   ; None         ; 12.697 ns  ; data_16[14]     ; recu       ; clk        ;
+; N/A   ; None         ; 12.532 ns  ; data_16[8]      ; recu       ; clk        ;
+; N/A   ; None         ; 11.879 ns  ; count[0]        ; recu       ; clk        ;
+; N/A   ; None         ; 11.817 ns  ; count[2]        ; recu       ; clk        ;
+; N/A   ; None         ; 11.656 ns  ; count[3]        ; recu       ; clk        ;
+; N/A   ; None         ; 11.513 ns  ; count[1]        ; recu       ; clk        ;
+; N/A   ; None         ; 11.243 ns  ; count[4]        ; recu       ; clk        ;
+; N/A   ; None         ; 10.074 ns  ; dataout[4]~reg0 ; dataout[4] ; clk        ;
+; N/A   ; None         ; 9.951 ns   ; dataout[5]~reg0 ; dataout[5] ; clk        ;
+; N/A   ; None         ; 9.877 ns   ; dataout[0]~reg0 ; dataout[0] ; clk        ;
+; N/A   ; None         ; 9.832 ns   ; dataout[7]~reg0 ; dataout[7] ; clk        ;
+; N/A   ; None         ; 9.830 ns   ; dataout[3]~reg0 ; dataout[3] ; clk        ;
+; N/A   ; None         ; 9.790 ns   ; dataout[1]~reg0 ; dataout[1] ; clk        ;
+; N/A   ; None         ; 9.555 ns   ; dataout[6]~reg0 ; dataout[6] ; clk        ;
+; N/A   ; None         ; 8.926 ns   ; dataout[2]~reg0 ; dataout[2] ; clk        ;
++-------+--------------+------------+-----------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------+
+; th                                                                                           ;
++---------------+-------------+-----------+-------+---------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To                              ; To Clock ;
++---------------+-------------+-----------+-------+---------------------------------+----------+
+; N/A           ; None        ; -0.809 ns ; reset ; canal_tx:comp2|RegOut:U6|Tx     ; clk      ;
+; N/A           ; None        ; -1.577 ns ; reset ; canal_tx:comp2|RegOut:U6|eof    ; clk      ;
+; N/A           ; None        ; -1.655 ns ; reset ; canal_tx:comp2|RegOut:U6|sof    ; clk      ;
+; N/A           ; None        ; -1.677 ns ; reset ; canal_tx:comp2|p_emetteur:U4|pr ; clk      ;
++---------------+-------------+-----------+-------+---------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Mon Jul 15 01:16:10 2019
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off bench_canal_tx -c bench_canal_tx --timing_analysis_only
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "inc" is a latch
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 137.63 MHz between source register "canal_tx:comp2|dec_pr" and destination register "canal_tx:comp2|p_emetteur:U4|container[104]" (period= 7.266 ns)
+    Info: + Longest register to register delay is 3.356 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X65_Y20_N25; Fanout = 6; REG Node = 'canal_tx:comp2|dec_pr'
+        Info: 2: + IC(1.111 ns) + CELL(0.319 ns) = 1.430 ns; Loc. = LCCOMB_X63_Y20_N4; Fanout = 142; COMB Node = 'canal_tx:comp2|p_emetteur:U4|container[126]~289'
+        Info: 3: + IC(1.071 ns) + CELL(0.855 ns) = 3.356 ns; Loc. = LCFF_X62_Y18_N25; Fanout = 1; REG Node = 'canal_tx:comp2|p_emetteur:U4|container[104]'
+        Info: Total cell delay = 1.174 ns ( 34.98 % )
+        Info: Total interconnect delay = 2.182 ns ( 65.02 % )
+    Info: - Smallest clock skew is -0.013 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 3.195 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'clk'
+            Info: 2: + IC(0.137 ns) + CELL(0.000 ns) = 1.227 ns; Loc. = CLKCTRL_G3; Fanout = 375; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(1.302 ns) + CELL(0.666 ns) = 3.195 ns; Loc. = LCFF_X62_Y18_N25; Fanout = 1; REG Node = 'canal_tx:comp2|p_emetteur:U4|container[104]'
+            Info: Total cell delay = 1.756 ns ( 54.96 % )
+            Info: Total interconnect delay = 1.439 ns ( 45.04 % )
+        Info: - Longest clock path from clock "clk" to source register is 3.208 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'clk'
+            Info: 2: + IC(0.137 ns) + CELL(0.000 ns) = 1.227 ns; Loc. = CLKCTRL_G3; Fanout = 375; COMB Node = 'clk~clkctrl'
+            Info: 3: + IC(1.315 ns) + CELL(0.666 ns) = 3.208 ns; Loc. = LCFF_X65_Y20_N25; Fanout = 6; REG Node = 'canal_tx:comp2|dec_pr'
+            Info: Total cell delay = 1.756 ns ( 54.74 % )
+            Info: Total interconnect delay = 1.452 ns ( 45.26 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Micro setup delay of destination is -0.040 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tsu for register "canal_tx:comp2|p_emetteur:U4|pr" (data pin = "reset", clock pin = "clk") is 1.943 ns
+    Info: + Longest pin to register delay is 5.187 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_M2; Fanout = 7; PIN Node = 'reset'
+        Info: 2: + IC(3.338 ns) + CELL(0.651 ns) = 5.079 ns; Loc. = LCCOMB_X63_Y20_N12; Fanout = 1; COMB Node = 'canal_tx:comp2|p_emetteur:U4|pr~3'
+        Info: 3: + IC(0.000 ns) + CELL(0.108 ns) = 5.187 ns; Loc. = LCFF_X63_Y20_N13; Fanout = 2; REG Node = 'canal_tx:comp2|p_emetteur:U4|pr'
+        Info: Total cell delay = 1.849 ns ( 35.65 % )
+        Info: Total interconnect delay = 3.338 ns ( 64.35 % )
+    Info: + Micro setup delay of destination is -0.040 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 3.204 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.137 ns) + CELL(0.000 ns) = 1.227 ns; Loc. = CLKCTRL_G3; Fanout = 375; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.311 ns) + CELL(0.666 ns) = 3.204 ns; Loc. = LCFF_X63_Y20_N13; Fanout = 2; REG Node = 'canal_tx:comp2|p_emetteur:U4|pr'
+        Info: Total cell delay = 1.756 ns ( 54.81 % )
+        Info: Total interconnect delay = 1.448 ns ( 45.19 % )
+Info: tco from clock "clk" to destination pin "recu" through register "data_16[5]" is 13.191 ns
+    Info: + Longest clock path from clock "clk" to source register is 3.205 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.137 ns) + CELL(0.000 ns) = 1.227 ns; Loc. = CLKCTRL_G3; Fanout = 375; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.312 ns) + CELL(0.666 ns) = 3.205 ns; Loc. = LCFF_X32_Y21_N29; Fanout = 2; REG Node = 'data_16[5]'
+        Info: Total cell delay = 1.756 ns ( 54.79 % )
+        Info: Total interconnect delay = 1.449 ns ( 45.21 % )
+    Info: + Micro clock to output delay of source is 0.304 ns
+    Info: + Longest register to pin delay is 9.682 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X32_Y21_N29; Fanout = 2; REG Node = 'data_16[5]'
+        Info: 2: + IC(0.445 ns) + CELL(0.505 ns) = 0.950 ns; Loc. = LCCOMB_X32_Y21_N24; Fanout = 2; COMB Node = 'decod_manchester:comp3|dataout[2]'
+        Info: 3: + IC(0.406 ns) + CELL(0.534 ns) = 1.890 ns; Loc. = LCCOMB_X32_Y21_N30; Fanout = 3; COMB Node = 'Equal2~1'
+        Info: 4: + IC(0.608 ns) + CELL(0.624 ns) = 3.122 ns; Loc. = LCCOMB_X31_Y21_N4; Fanout = 9; COMB Node = 'recup~1'
+        Info: 5: + IC(3.344 ns) + CELL(3.216 ns) = 9.682 ns; Loc. = PIN_AB8; Fanout = 0; PIN Node = 'recu'
+        Info: Total cell delay = 4.879 ns ( 50.39 % )
+        Info: Total interconnect delay = 4.803 ns ( 49.61 % )
+Info: th for register "canal_tx:comp2|RegOut:U6|Tx" (data pin = "reset", clock pin = "clk") is -0.809 ns
+    Info: + Longest clock path from clock "clk" to destination register is 3.206 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'clk'
+        Info: 2: + IC(0.137 ns) + CELL(0.000 ns) = 1.227 ns; Loc. = CLKCTRL_G3; Fanout = 375; COMB Node = 'clk~clkctrl'
+        Info: 3: + IC(1.313 ns) + CELL(0.666 ns) = 3.206 ns; Loc. = LCFF_X34_Y21_N25; Fanout = 1; REG Node = 'canal_tx:comp2|RegOut:U6|Tx'
+        Info: Total cell delay = 1.756 ns ( 54.77 % )
+        Info: Total interconnect delay = 1.450 ns ( 45.23 % )
+    Info: + Micro hold delay of destination is 0.306 ns
+    Info: - Shortest pin to register delay is 4.321 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.090 ns) = 1.090 ns; Loc. = PIN_M2; Fanout = 7; PIN Node = 'reset'
+        Info: 2: + IC(2.376 ns) + CELL(0.855 ns) = 4.321 ns; Loc. = LCFF_X34_Y21_N25; Fanout = 1; REG Node = 'canal_tx:comp2|RegOut:U6|Tx'
+        Info: Total cell delay = 1.945 ns ( 45.01 % )
+        Info: Total interconnect delay = 2.376 ns ( 54.99 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 202 megabytes
+    Info: Processing ended: Mon Jul 15 01:16:11 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
