@@ -250,13 +250,13 @@ VECTOR("C:/Users/Kratos/Desktop/Bench_canal_tx/bench_canal_tx.vwf")
 	}
 }
 
-VECTOR("C:/Users/zakar/Desktop/benchPLEASEWORK/bench_canal_tx.vwf")
+VECTOR("C:/Users/zakar/Desktop/benchPLEASEWORK/db/bench_canal_tx.sim.cvwf")
 {
 	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 60000000;
-		NUMERATOR = 20;
-		DENOMINATOR = 1000;
+		ZBEGIN = 34596225;
+		ZEND = 42284278;
+		NUMERATOR = 695;
+		DENOMINATOR = 7688053;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
@@ -365,17 +365,17 @@ VECTOR("C:/Users/zakar/Desktop/benchPLEASEWORK/bench_canal_tx.vwf")
 	}
 }
 
-VECTOR("C:/Users/zakar/Desktop/benchPLEASEWORK/db/bench_canal_tx.sim.cvwf")
+VECTOR("C:/Users/zakar/Desktop/benchPLEASEWORK/bench_canal_tx.vwf")
 {
 	ZOOM{
-		ZBEGIN = 37500000;
-		ZEND = 52500000;
-		NUMERATOR = 828;
-		DENOMINATOR = 15000000;
+		ZBEGIN = 0;
+		ZEND = 60000000;
+		NUMERATOR = 725;
+		DENOMINATOR = 60000000;
 		TOP_INDEX = 0;
 	}
 	CLOCK{
-		PERIOD = 10000;
+		PERIOD = 20000;
 		OFFSET = 0;
 		DUTY_CYCLE = 50;
 	}

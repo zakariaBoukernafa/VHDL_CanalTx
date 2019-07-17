@@ -23,18 +23,18 @@ BEGIN
 			Container <= (OTHERS => '0');
 		ELSIF rising_edge(H) THEN
 			IF decregout = '1' THEN
-
+			Tx <= Container(0);
 				Container <= muxIn & Container(1455 DOWNTO 1);
 			END IF;
 			IF Container(1 DOWNTO 0) /= "00" THEN
 				sof <= '1';
-			ELSIF ((C3EQREG4 = '1') AND Container (5 DOWNTO 0) = "000" AND (C3 /= 0)) THEN
+			ELSIF ( Container (2 DOWNTO 0) = "000" and (C3/=0) and  C3EQREG4='1'  )  THEN
 				eof <= '1';
 			ELSE
 				sof <= '0';
 				eof <= '0';
 			END IF;
-			Tx <= Container(0);
+
 		END IF;
 	END PROCESS;
 END areg_dec_Tx;

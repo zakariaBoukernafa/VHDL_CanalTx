@@ -1,0 +1,21 @@
+
+State Machine - |bench_canal_tx|canal_tx:comp2|sequenceur:U12|etat
+Name etat.m17 etat.m16 etat.m15 etat.m14 etat.m13 etat.m12 etat.m11 etat.m10 etat.m9 etat.m8 etat.m7 etat.m6 etat.m5 etat.m4 etat.m3 etat.m2 etat.m1 etat.m0 
+etat.m0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+etat.m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+etat.m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+etat.m3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+etat.m4 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+etat.m5 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+etat.m6 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+etat.m7 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+etat.m8 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+etat.m9 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+etat.m10 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+etat.m11 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+etat.m12 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+etat.m13 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+etat.m14 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+etat.m15 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+etat.m16 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+etat.m17 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

@@ -13,9 +13,9 @@ END reg1;
 
 ARCHITECTURE areg1 OF reg1 IS
 	SIGNAL Container : std_logic_vector(15 DOWNTO 0);
-
+	SIGNAL tester    : std_logic;
 BEGIN
-	PROCESS (h, r, ld1)
+	PROCESS (h, ld1)
 	BEGIN
 		IF rising_edge(h) THEN
 
@@ -23,9 +23,10 @@ BEGIN
 				Container <= din_reg1;
 			ELSIF dec1 = '1' THEN
 				Container <= '0' & Container(15 DOWNTO 1);
+				tester <=Container(0);
 			END IF;
-			dout_reg1 <= Container(0);
+			
 		END IF;
 	END PROCESS;
-
+dout_reg1 <= tester;
 END areg1;

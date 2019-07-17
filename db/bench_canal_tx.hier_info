@@ -108,6 +108,7 @@ data_out[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bench_canal_tx|canal_tx:comp2
+h => sequenceur:U12.H
 h => Reg4:U11.H
 h => RegH:U10.H
 h => RegL:U9.H
@@ -118,53 +119,12 @@ h => mux:U5.h
 h => p_emetteur:U4.H
 h => Reg1:U3.h
 h => fifo:U1.clock
-h => e0.CLK
-h => e1.CLK
-h => e2.CLK
-h => e3.CLK
-h => RAZ2.CLK
-h => RAZ3.CLK
-h => RAZ4.CLK
-h => LD2.CLK
-h => LD3.CLK
-h => LD4.CLK
-h => init_pr.CLK
-h => dec_pr.CLK
-h => read_fifo.CLK
-h => Decregout.CLK
-h => LD1.CLK
-h => DEC1.CLK
-h => sel0.CLK
-h => sel1.CLK
-h => sel2.CLK
-h => INC3.CLK
-h => INC2.CLK
+R => sequenceur:U12.R
 R => RegH:U10.R
 R => RegL:U9.R
 R => RegOut:U6.r
 R => mux:U5.R
 R => p_emetteur:U4.R
-R => e0.ACLR
-R => e1.ACLR
-R => e2.ACLR
-R => e3.ACLR
-R => RAZ2.ACLR
-R => RAZ3.ACLR
-R => RAZ4.ACLR
-R => LD2.ACLR
-R => LD3.ACLR
-R => LD4.ACLR
-R => init_pr.ACLR
-R => dec_pr.ACLR
-R => read_fifo.ACLR
-R => Decregout.ACLR
-R => LD1.ACLR
-R => DEC1.ACLR
-R => sel0.ACLR
-R => sel1.ACLR
-R => sel2.ACLR
-R => INC3.ACLR
-R => INC2.ACLR
 R => Reg1:U3.r
 full <= fifo:U1.full
 Din[0] => fifo:U1.data[0]
@@ -558,7 +518,7 @@ h => Container[3].CLK
 h => Container[2].CLK
 h => Container[1].CLK
 h => Container[0].CLK
-h => dout_reg1~reg0.CLK
+h => tester.CLK
 r => ~NO_FANOUT~
 ld1 => Container~31.OUTPUTSELECT
 ld1 => Container~30.OUTPUTSELECT
@@ -576,6 +536,8 @@ ld1 => Container~19.OUTPUTSELECT
 ld1 => Container~18.OUTPUTSELECT
 ld1 => Container~17.OUTPUTSELECT
 ld1 => Container~16.OUTPUTSELECT
+ld1 => tester.ENA
+dec1 => tester~0.OUTPUTSELECT
 dec1 => Container~15.OUTPUTSELECT
 dec1 => Container~14.OUTPUTSELECT
 dec1 => Container~13.OUTPUTSELECT
@@ -608,7 +570,7 @@ din_reg1[12] => Container~19.DATAB
 din_reg1[13] => Container~18.DATAB
 din_reg1[14] => Container~17.DATAB
 din_reg1[15] => Container~16.DATAB
-dout_reg1 <= dout_reg1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+dout_reg1 <= tester.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bench_canal_tx|canal_tx:comp2|p_emetteur:U4
@@ -1196,20 +1158,13 @@ pr <= pr~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bench_canal_tx|canal_tx:comp2|mux:U5
-H => sel[1].CLK
-H => sel[0].CLK
-H => mux_out~reg0.CLK
-R => sel[1].ACLR
-R => sel[0].ACLR
-sel0 => sel~5.OUTPUTSELECT
-sel0 => sel~4.OUTPUTSELECT
-sel1 => sel~3.OUTPUTSELECT
-sel1 => sel~2.OUTPUTSELECT
-sel2 => sel~1.OUTPUTSELECT
-sel2 => sel~0.OUTPUTSELECT
-Reg1in => mux_out~0.DATAB
-emetteurPreambule => mux_out~1.DATAB
-mux_out <= mux_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+H => ~NO_FANOUT~
+R => ~NO_FANOUT~
+Reg1in => Mux0.IN2
+sel[0] => Mux0.IN4
+sel[1] => Mux0.IN3
+emetteurPreambule => Mux0.IN5
+mux_out <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bench_canal_tx|canal_tx:comp2|RegOut:U6
@@ -5588,7 +5543,7 @@ Decregout => Container[2].ENA
 Decregout => Container[1].ENA
 Decregout => Container[0].ENA
 muxIn => Container[1455].DATAIN
-C3EQREG4 => process_0~0.IN1
+C3EQREG4 => process_0~1.IN1
 C3[0] => Equal2.IN33
 C3[1] => Equal2.IN32
 C3[2] => Equal2.IN31
@@ -5714,14 +5669,6 @@ RAZ2 => C2EQ144~reg0.ENA
 RAZ2 => C2EQF~reg0.ENA
 C2EQF <= C2EQF~reg0.DB_MAX_OUTPUT_PORT_TYPE
 C2EQ144 <= C2EQ144~reg0.DB_MAX_OUTPUT_PORT_TYPE
-C2out[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
-C2out[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
-C2out[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
-C2out[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
-C2out[4] <= counter[4].DB_MAX_OUTPUT_PORT_TYPE
-C2out[5] <= counter[5].DB_MAX_OUTPUT_PORT_TYPE
-C2out[6] <= counter[6].DB_MAX_OUTPUT_PORT_TYPE
-C2out[7] <= counter[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bench_canal_tx|canal_tx:comp2|RegL:U9
@@ -5926,6 +5873,45 @@ RegH[5] => Add0.IN25
 RegH[6] => Add0.IN24
 RegH[7] => Add0.IN23
 C3eqREG4 <= C3eqREG4~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|bench_canal_tx|canal_tx:comp2|sequenceur:U12
+C3EQREG4In => Selector4.IN3
+C3EQREG4In => Selector5.IN1
+C3EQ13In => etat_suiv.m9.DATAB
+C3EQ13In => Selector3.IN2
+C3EQ14In => etat_suiv.m12.DATAB
+C3EQ14In => etat_suiv.m11.DATAB
+EofIn => Selector0.IN2
+EofIn => Selector7.IN1
+SofIn => Selector7.IN3
+SofIn => Selector4.IN1
+emptyIn => Selector6.IN3
+emptyIn => Selector5.IN3
+emptyIn => Selector0.IN3
+emptyIn => Selector1.IN1
+emptyIn => Selector1.IN2
+emptyIn => etat_suiv.m1.DATAB
+C2EQFIn => etat_suiv.m8.DATAB
+C2EQFIn => Selector2.IN2
+C2EQ144In => Selector1.IN4
+C2EQ144In => etat_suiv.m3.DATAB
+readOut <= process_1~0.DB_MAX_OUTPUT_PORT_TYPE
+LD1Out <= process_1~7.DB_MAX_OUTPUT_PORT_TYPE
+LD2Out <= process_1~9.DB_MAX_OUTPUT_PORT_TYPE
+LD3Out <= process_1~10.DB_MAX_OUTPUT_PORT_TYPE
+DEC1Out <= process_1~8.DB_MAX_OUTPUT_PORT_TYPE
+selOut[0] <= selOut~0.DB_MAX_OUTPUT_PORT_TYPE
+selOut[1] <= process_1~2.DB_MAX_OUTPUT_PORT_TYPE
+init_prOut <= process_1~1.DB_MAX_OUTPUT_PORT_TYPE
+dec_prOut <= process_1~6.DB_MAX_OUTPUT_PORT_TYPE
+INC2Out <= INC2Out~0.DB_MAX_OUTPUT_PORT_TYPE
+RAZ2Out <= RAZ2Out~0.DB_MAX_OUTPUT_PORT_TYPE
+INC3Out <= process_1~3.DB_MAX_OUTPUT_PORT_TYPE
+RAZ3Out <= process_1~5.DB_MAX_OUTPUT_PORT_TYPE
+LD4Out <= process_1~11.DB_MAX_OUTPUT_PORT_TYPE
+RAZ4Out <= process_1~4.DB_MAX_OUTPUT_PORT_TYPE
+Decregout <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |bench_canal_tx|decod_manchester:comp3

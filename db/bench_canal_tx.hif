@@ -91,45 +91,6 @@ d:|backup|quart|altera|90|quartus|lmf|maxplus2.lmf
 
 # end
 # entity
-canal_tx
-# storage
-db|bench_canal_tx.(2).cnf
-db|bench_canal_tx.(2).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-canal_tx .vhd
-5133caed5e2c3cf590e13a8abf7c96e
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(din)
-7 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-canal_tx:comp2
-}
-# lmf
-d:|backup|quart|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
 fifo
 # storage
 db|bench_canal_tx.(3).cnf
@@ -896,7 +857,7 @@ ON
 # case_insensitive
 # source_file
 R_dec.vhd
-32bf6dc1e462b388697867e94f1c8519
+ece7cbc470e6d41616bc703936eebee2
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -949,78 +910,6 @@ ON
 }
 # hierarchies {
 canal_tx:comp2|p_emetteur:U4
-}
-# lmf
-d:|backup|quart|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-mux
-# storage
-db|bench_canal_tx.(15).cnf
-db|bench_canal_tx.(15).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-mux.vhd
-347f15c2c2a6c18592e4f41463cb98c2
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-canal_tx:comp2|mux:U5
-}
-# lmf
-d:|backup|quart|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-RegOut
-# storage
-db|bench_canal_tx.(16).cnf
-db|bench_canal_tx.(16).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-RegOut.vhd
-1d9822cc5f139eb44b8e1e28aa04b3d
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(c3)
-15 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-canal_tx:comp2|RegOut:U6
 }
 # lmf
 d:|backup|quart|altera|90|quartus|lmf|maxplus2.lmf
@@ -1154,57 +1043,10 @@ d:|backup|quart|altera|90|quartus|lmf|maxplus2.lmf
 
 # end
 # entity
-Reg4
-# storage
-db|bench_canal_tx.(21).cnf
-db|bench_canal_tx.(21).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-Reg4.vhd
-68422b6fe44453649521d572a816b52
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(c3)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(regl)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(regh)
-7 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-canal_tx:comp2|Reg4:U11
-}
-# lmf
-d:|backup|quart|altera|90|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
 decod_manchester
 # storage
-db|bench_canal_tx.(22).cnf
-db|bench_canal_tx.(22).cnf
+db|bench_canal_tx.(23).cnf
+db|bench_canal_tx.(23).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
@@ -1246,8 +1088,8 @@ d:|backup|quart|altera|90|quartus|lmf|maxplus2.lmf
 # entity
 altshift_taps
 # storage
-db|bench_canal_tx.(23).cnf
-db|bench_canal_tx.(23).cnf
+db|bench_canal_tx.(24).cnf
+db|bench_canal_tx.(24).cnf
 # case_insensitive
 # source_file
 d:|backup|quart|altera|90|quartus|libraries|megafunctions|altshift_taps.tdf
@@ -1263,7 +1105,7 @@ NUMBER_OF_TAPS
 PARAMETER_UNKNOWN
 USR
 TAP_DISTANCE
-1452
+1454
 PARAMETER_UNKNOWN
 USR
 WIDTH
@@ -1275,7 +1117,7 @@ CLEARED
 PARAMETER_UNKNOWN
 DEF
 CBXI_PARAMETER
-shift_taps_c4n
+shift_taps_e4n
 PARAMETER_UNKNOWN
 USR
 }
@@ -1297,27 +1139,27 @@ aclr
 3
 }
 # include_file {
-d:|backup|quart|altera|90|quartus|libraries|megafunctions|lpm_compare.inc
-aec4ea1b78f4cda1c3effe18f1abbf63
 d:|backup|quart|altera|90|quartus|libraries|megafunctions|lpm_constant.inc
 dcde44eee59335c1e2fe75d574f9646
-d:|backup|quart|altera|90|quartus|libraries|megafunctions|altdpram.inc
-99d442b5b66c88db4daf94d99c6e4e77
 d:|backup|quart|altera|90|quartus|libraries|megafunctions|lpm_counter.inc
 7f888b135ddf66f0653c44cb18ac5
+d:|backup|quart|altera|90|quartus|libraries|megafunctions|lpm_compare.inc
+aec4ea1b78f4cda1c3effe18f1abbf63
+d:|backup|quart|altera|90|quartus|libraries|megafunctions|altdpram.inc
+99d442b5b66c88db4daf94d99c6e4e77
 }
 # macro_sequence
 
 # end
 # entity
-shift_taps_c4n
+shift_taps_e4n
 # storage
-db|bench_canal_tx.(24).cnf
-db|bench_canal_tx.(24).cnf
+db|bench_canal_tx.(25).cnf
+db|bench_canal_tx.(25).cnf
 # case_insensitive
 # source_file
-db|shift_taps_c4n.tdf
-d3b4f281057e01f4f37b64b6994f5a8
+db|shift_taps_e4n.tdf
+ffa547f29a4cc3c1421eae7cef57cad3
 7
 # used_port {
 taps0
@@ -1340,14 +1182,14 @@ aclr
 
 # end
 # entity
-altsyncram_g6b1
+altsyncram_k6b1
 # storage
-db|bench_canal_tx.(25).cnf
-db|bench_canal_tx.(25).cnf
+db|bench_canal_tx.(26).cnf
+db|bench_canal_tx.(26).cnf
 # case_insensitive
 # source_file
-db|altsyncram_g6b1.tdf
-19c943a9363c8dd771ef6be23c69b
+db|altsyncram_k6b1.tdf
+ede2ac0ecd3de0163aa34827d03843
 7
 # used_port {
 q_b0
@@ -1439,14 +1281,14 @@ wren_a
 
 # end
 # entity
-cntr_rqf
+cntr_tqf
 # storage
-db|bench_canal_tx.(26).cnf
-db|bench_canal_tx.(26).cnf
+db|bench_canal_tx.(27).cnf
+db|bench_canal_tx.(27).cnf
 # case_insensitive
 # source_file
-db|cntr_rqf.tdf
-d49e9ba7d062187b93c05d3f1ba61f84
+db|cntr_tqf.tdf
+709588fb44b995bd70d4291d4f41fabd
 7
 # used_port {
 q9
@@ -1495,8 +1337,8 @@ clk_en
 # entity
 cmpr_mdc
 # storage
-db|bench_canal_tx.(27).cnf
-db|bench_canal_tx.(27).cnf
+db|bench_canal_tx.(28).cnf
+db|bench_canal_tx.(28).cnf
 # case_insensitive
 # source_file
 db|cmpr_mdc.tdf
@@ -1513,9 +1355,6 @@ datab4
 -1
 3
 datab2
--1
-3
-datab1
 -1
 3
 dataa9
@@ -1569,6 +1408,9 @@ datab3
 datab10
 -1
 2
+datab1
+-1
+2
 datab0
 -1
 2
@@ -1577,14 +1419,14 @@ datab0
 
 # end
 # entity
-cntr_hah
+cntr_jah
 # storage
-db|bench_canal_tx.(28).cnf
-db|bench_canal_tx.(28).cnf
+db|bench_canal_tx.(29).cnf
+db|bench_canal_tx.(29).cnf
 # case_insensitive
 # source_file
-db|cntr_hah.tdf
-1a85a13b9fe2f67870e7c99cd8df6f74
+db|cntr_jah.tdf
+a239194fc5e07e9eaff0192b5870d3ed
 7
 # used_port {
 cout
@@ -1607,18 +1449,18 @@ aset
 
 # end
 # entity
-C2
+mux
 # storage
-db|bench_canal_tx.(18).cnf
-db|bench_canal_tx.(18).cnf
+db|bench_canal_tx.(15).cnf
+db|bench_canal_tx.(15).cnf
 # logic_option {
 AUTO_RAM_RECOGNITION
 ON
 }
 # case_insensitive
 # source_file
-C2.vhd
-4c2d088ad48c1747815629a9a28fd0
+mux.vhd
+211e525b2f031788ab72a5ad176044
 5
 # internal_option {
 HDL_INITIAL_FANOUT_LIMIT
@@ -1631,10 +1473,207 @@ AUTO_ROM_RECOGNITION
 ON
 }
 # user_parameter {
- constraint(c2out)
+ constraint(sel)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+canal_tx:comp2|mux:U5
+}
+# lmf
+d:|backup|quart|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+Reg4
+# storage
+db|bench_canal_tx.(21).cnf
+db|bench_canal_tx.(21).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+Reg4.vhd
+68422b6fe44453649521d572a816b52
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(c3)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(regl)
 7 downto 0
 PARAMETER_STRING
 USR
+ constraint(regh)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+canal_tx:comp2|Reg4:U11
+}
+# lmf
+d:|backup|quart|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+RegOut
+# storage
+db|bench_canal_tx.(16).cnf
+db|bench_canal_tx.(16).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+RegOut.vhd
+c3573c64d5c142afb04c8360eef0f154
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(c3)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+canal_tx:comp2|RegOut:U6
+}
+# lmf
+d:|backup|quart|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+sequenceur
+# storage
+db|bench_canal_tx.(22).cnf
+db|bench_canal_tx.(22).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+sequenceur.vhd
+e38b1c26a428c7118220dd4674a942c
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(selout)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+canal_tx:comp2|sequenceur:U12
+}
+# lmf
+d:|backup|quart|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+canal_tx
+# storage
+db|bench_canal_tx.(2).cnf
+db|bench_canal_tx.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+canal_tx .vhd
+3ee47ada90ea5ec6d5db4da5fb3e9c6
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(din)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+canal_tx:comp2
+}
+# lmf
+d:|backup|quart|altera|90|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+C2
+# storage
+db|bench_canal_tx.(18).cnf
+db|bench_canal_tx.(18).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+C2.vhd
+f5a096ced8a69f4cf2a05897b6c2a645
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
 }
 # hierarchies {
 canal_tx:comp2|C2:U8

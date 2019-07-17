@@ -9,8 +9,8 @@ ENTITY C2 IS
 	PORT
 	(
 		H, INC2, RAZ2 : IN std_logic;
-		C2EQF, C2EQ144 : OUT std_logic;
-		C2out : OUT std_logic_vector(7 DOWNTO 0)
+		C2EQF, C2EQ144 : OUT std_logic
+		
 	);
 
 END ENTITY;
@@ -40,5 +40,4 @@ BEGIN
 			END IF;
 		END IF;
 	END PROCESS;
-	C2out <= counter;
 END ARCHITECTURE;

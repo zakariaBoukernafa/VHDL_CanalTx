@@ -1,16 +1,16 @@
-Fitter Status : Successful - Mon Jul 15 01:16:02 2019
+Fitter Status : Successful - Wed Jul 17 19:21:13 2019
 Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
 Revision Name : bench_canal_tx
 Top-level Entity Name : bench_canal_tx
 Family : Cyclone II
 Device : EP2C50F484C8
 Timing Models : Final
-Total logic elements : 409 / 50,528 ( < 1 % )
-    Total combinational functions : 387 / 50,528 ( < 1 % )
-    Dedicated logic registers : 325 / 50,528 ( < 1 % )
-Total registers : 325
+Total logic elements : 389 / 50,528 ( < 1 % )
+    Total combinational functions : 368 / 50,528 ( < 1 % )
+    Dedicated logic registers : 321 / 50,528 ( < 1 % )
+Total registers : 321
 Total pins : 11 / 294 ( 4 % )
 Total virtual pins : 0
-Total memory bits : 1,578 / 594,432 ( < 1 % )
+Total memory bits : 1,580 / 594,432 ( < 1 % )
 Embedded Multiplier 9-bit elements : 0 / 172 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )

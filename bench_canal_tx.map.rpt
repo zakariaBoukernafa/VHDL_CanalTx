@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bench_canal_tx
-Mon Jul 15 01:15:50 2019
+Wed Jul 17 19:20:59 2019
 Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
@@ -13,18 +13,18 @@ Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
   5. Analysis & Synthesis Resource Usage Summary
   6. Analysis & Synthesis Resource Utilization by Entity
   7. Analysis & Synthesis RAM Summary
-  8. User-Specified and Inferred Latches
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated|a_dpfifo_ev21:dpfifo|dpram_st01:FIFOram|altsyncram_0sj1:altsyncram2
- 14. Source assignments for canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_c4n:auto_generated|altsyncram_g6b1:altsyncram2
- 15. Parameter Settings for User Entity Instance: canal_tx:comp2|fifo:U1|scfifo:scfifo_component
- 16. Parameter Settings for Inferred Entity Instance: canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0
- 17. scfifo Parameter Settings by Entity Instance
- 18. altshift_taps Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "canal_tx:comp2|C2:U8"
+  8. State Machine - |bench_canal_tx|canal_tx:comp2|sequenceur:U12|etat
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated|a_dpfifo_ev21:dpfifo|dpram_st01:FIFOram|altsyncram_0sj1:altsyncram2
+ 15. Source assignments for canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_e4n:auto_generated|altsyncram_k6b1:altsyncram2
+ 16. Parameter Settings for User Entity Instance: canal_tx:comp2|fifo:U1|scfifo:scfifo_component
+ 17. Parameter Settings for Inferred Entity Instance: canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0
+ 18. scfifo Parameter Settings by Entity Instance
+ 19. altshift_taps Parameter Settings by Entity Instance
  20. Analysis & Synthesis Messages
 
 
@@ -51,18 +51,18 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jul 15 01:15:50 2019    ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul 17 19:20:59 2019    ;
 ; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name                      ; bench_canal_tx                           ;
 ; Top-level Entity Name              ; bench_canal_tx                           ;
 ; Family                             ; Cyclone II                               ;
-; Total logic elements               ; 425                                      ;
-;     Total combinational functions  ; 387                                      ;
-;     Dedicated logic registers      ; 325                                      ;
-; Total registers                    ; 325                                      ;
+; Total logic elements               ; 406                                      ;
+;     Total combinational functions  ; 368                                      ;
+;     Dedicated logic registers      ; 321                                      ;
+; Total registers                    ; 321                                      ;
 ; Total pins                         ; 11                                       ;
 ; Total virtual pins                 ; 0                                        ;
-; Total memory bits                  ; 1,578                                    ;
+; Total memory bits                  ; 1,580                                    ;
 ; Embedded Multiplier 9-bit elements ; 0                                        ;
 ; Total PLLs                         ; 0                                        ;
 +------------------------------------+------------------------------------------+
@@ -148,6 +148,7 @@ applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                ;
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+
+; sequenceur.vhd                   ; yes             ; User VHDL File               ; C:/Users/zakar/Desktop/benchPLEASEWORK/sequenceur.vhd                       ;
 ; C2.vhd                           ; yes             ; User VHDL File               ; C:/Users/zakar/Desktop/benchPLEASEWORK/C2.vhd                               ;
 ; C3.vhd                           ; yes             ; User VHDL File               ; C:/Users/zakar/Desktop/benchPLEASEWORK/C3.vhd                               ;
 ; canal_tx .vhd                    ; yes             ; User VHDL File               ; C:/Users/zakar/Desktop/benchPLEASEWORK/canal_tx .vhd                        ;
@@ -182,11 +183,11 @@ applicable agreement for further details.
 ; lpm_counter.inc                  ; yes             ; Megafunction                 ; d:/backup/quart/altera/90/quartus/libraries/megafunctions/lpm_counter.inc   ;
 ; lpm_compare.inc                  ; yes             ; Megafunction                 ; d:/backup/quart/altera/90/quartus/libraries/megafunctions/lpm_compare.inc   ;
 ; lpm_constant.inc                 ; yes             ; Megafunction                 ; d:/backup/quart/altera/90/quartus/libraries/megafunctions/lpm_constant.inc  ;
-; db/shift_taps_c4n.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/zakar/Desktop/benchPLEASEWORK/db/shift_taps_c4n.tdf                ;
-; db/altsyncram_g6b1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/zakar/Desktop/benchPLEASEWORK/db/altsyncram_g6b1.tdf               ;
-; db/cntr_rqf.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/zakar/Desktop/benchPLEASEWORK/db/cntr_rqf.tdf                      ;
+; db/shift_taps_e4n.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/zakar/Desktop/benchPLEASEWORK/db/shift_taps_e4n.tdf                ;
+; db/altsyncram_k6b1.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/zakar/Desktop/benchPLEASEWORK/db/altsyncram_k6b1.tdf               ;
+; db/cntr_tqf.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/zakar/Desktop/benchPLEASEWORK/db/cntr_tqf.tdf                      ;
 ; db/cmpr_mdc.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/zakar/Desktop/benchPLEASEWORK/db/cmpr_mdc.tdf                      ;
-; db/cntr_hah.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/zakar/Desktop/benchPLEASEWORK/db/cntr_hah.tdf                      ;
+; db/cntr_jah.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/zakar/Desktop/benchPLEASEWORK/db/cntr_jah.tdf                      ;
 +----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------+
 
 
@@ -195,28 +196,28 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 425   ;
+; Estimated Total logic elements              ; 406   ;
 ;                                             ;       ;
-; Total combinational functions               ; 387   ;
+; Total combinational functions               ; 368   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 73    ;
-;     -- 3 input functions                    ; 61    ;
-;     -- <=2 input functions                  ; 253   ;
+;     -- 4 input functions                    ; 56    ;
+;     -- 3 input functions                    ; 57    ;
+;     -- <=2 input functions                  ; 255   ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 299   ;
+;     -- normal mode                          ; 280   ;
 ;     -- arithmetic mode                      ; 88    ;
 ;                                             ;       ;
-; Total registers                             ; 325   ;
-;     -- Dedicated logic registers            ; 325   ;
+; Total registers                             ; 321   ;
+;     -- Dedicated logic registers            ; 321   ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 11    ;
-; Total memory bits                           ; 1578  ;
+; Total memory bits                           ; 1580  ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 334   ;
-; Total fan-out                               ; 2312  ;
-; Average fan-out                             ; 3.16  ;
+; Maximum fan-out                             ; 330   ;
+; Total fan-out                               ; 2221  ;
+; Average fan-out                             ; 3.13  ;
 +---------------------------------------------+-------+
 
 
@@ -225,33 +226,34 @@ applicable agreement for further details.
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                           ; Library Name ;
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |bench_canal_tx                                    ; 387 (19)          ; 325 (29)     ; 1578        ; 0            ; 0       ; 0         ; 11   ; 0            ; |bench_canal_tx                                                                                                                                               ; work         ;
-;    |canal_tx:comp2|                                ; 335 (33)          ; 286 (17)     ; 1578        ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2                                                                                                                                ; work         ;
+; |bench_canal_tx                                    ; 368 (19)          ; 321 (29)     ; 1580        ; 0            ; 0       ; 0         ; 11   ; 0            ; |bench_canal_tx                                                                                                                                               ; work         ;
+;    |canal_tx:comp2|                                ; 316 (0)           ; 282 (0)      ; 1580        ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2                                                                                                                                ; work         ;
 ;       |C2:U8|                                      ; 12 (12)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|C2:U8                                                                                                                          ; work         ;
 ;       |C3:U7|                                      ; 24 (24)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|C3:U7                                                                                                                          ; work         ;
 ;       |Reg4:U11|                                   ; 41 (41)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|Reg4:U11                                                                                                                       ; work         ;
 ;       |RegH:U10|                                   ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegH:U10                                                                                                                       ; work         ;
 ;       |RegL:U9|                                    ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegL:U9                                                                                                                        ; work         ;
-;       |RegOut:U6|                                  ; 36 (7)            ; 30 (7)       ; 1450        ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6                                                                                                                      ; work         ;
-;          |altshift_taps:Container_rtl_0|           ; 29 (0)            ; 23 (0)       ; 1450        ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0                                                                                        ; work         ;
-;             |shift_taps_c4n:auto_generated|        ; 29 (0)            ; 23 (1)       ; 1450        ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_c4n:auto_generated                                                          ; work         ;
-;                |altsyncram_g6b1:altsyncram2|       ; 0 (0)             ; 0 (0)        ; 1450        ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_c4n:auto_generated|altsyncram_g6b1:altsyncram2                              ; work         ;
-;                |cntr_hah:cntr3|                    ; 13 (13)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_c4n:auto_generated|cntr_hah:cntr3                                           ; work         ;
-;                |cntr_rqf:cntr1|                    ; 16 (13)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_c4n:auto_generated|cntr_rqf:cntr1                                           ; work         ;
-;                   |cmpr_mdc:cmpr7|                 ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_c4n:auto_generated|cntr_rqf:cntr1|cmpr_mdc:cmpr7                            ; work         ;
-;       |fifo:U1|                                    ; 22 (0)            ; 14 (0)       ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1                                                                                                                        ; work         ;
-;          |scfifo:scfifo_component|                 ; 22 (0)            ; 14 (0)       ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component                                                                                                ; work         ;
-;             |scfifo_7p21:auto_generated|           ; 22 (0)            ; 14 (0)       ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated                                                                     ; work         ;
-;                |a_dpfifo_ev21:dpfifo|              ; 22 (2)            ; 14 (0)       ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated|a_dpfifo_ev21:dpfifo                                                ; work         ;
-;                   |a_fefifo_76e:fifo_state|        ; 11 (7)            ; 6 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated|a_dpfifo_ev21:dpfifo|a_fefifo_76e:fifo_state                        ; work         ;
+;       |RegOut:U6|                                  ; 35 (6)            ; 28 (5)       ; 1452        ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6                                                                                                                      ; work         ;
+;          |altshift_taps:Container_rtl_0|           ; 29 (0)            ; 23 (0)       ; 1452        ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0                                                                                        ; work         ;
+;             |shift_taps_e4n:auto_generated|        ; 29 (0)            ; 23 (1)       ; 1452        ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_e4n:auto_generated                                                          ; work         ;
+;                |altsyncram_k6b1:altsyncram2|       ; 0 (0)             ; 0 (0)        ; 1452        ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_e4n:auto_generated|altsyncram_k6b1:altsyncram2                              ; work         ;
+;                |cntr_jah:cntr3|                    ; 13 (13)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_e4n:auto_generated|cntr_jah:cntr3                                           ; work         ;
+;                |cntr_tqf:cntr1|                    ; 16 (13)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_e4n:auto_generated|cntr_tqf:cntr1                                           ; work         ;
+;                   |cmpr_mdc:cmpr7|                 ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_e4n:auto_generated|cntr_tqf:cntr1|cmpr_mdc:cmpr7                            ; work         ;
+;       |fifo:U1|                                    ; 21 (0)            ; 14 (0)       ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1                                                                                                                        ; work         ;
+;          |scfifo:scfifo_component|                 ; 21 (0)            ; 14 (0)       ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component                                                                                                ; work         ;
+;             |scfifo_7p21:auto_generated|           ; 21 (0)            ; 14 (0)       ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated                                                                     ; work         ;
+;                |a_dpfifo_ev21:dpfifo|              ; 21 (2)            ; 14 (0)       ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated|a_dpfifo_ev21:dpfifo                                                ; work         ;
+;                   |a_fefifo_76e:fifo_state|        ; 10 (6)            ; 6 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated|a_dpfifo_ev21:dpfifo|a_fefifo_76e:fifo_state                        ; work         ;
 ;                      |cntr_pj7:count_usedw|        ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated|a_dpfifo_ev21:dpfifo|a_fefifo_76e:fifo_state|cntr_pj7:count_usedw   ; work         ;
 ;                   |cntr_djb:rd_ptr_count|          ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated|a_dpfifo_ev21:dpfifo|cntr_djb:rd_ptr_count                          ; work         ;
 ;                   |cntr_djb:wr_ptr|                ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated|a_dpfifo_ev21:dpfifo|cntr_djb:wr_ptr                                ; work         ;
 ;                   |dpram_st01:FIFOram|             ; 1 (0)             ; 0 (0)        ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated|a_dpfifo_ev21:dpfifo|dpram_st01:FIFOram                             ; work         ;
 ;                      |altsyncram_0sj1:altsyncram2| ; 1 (1)             ; 0 (0)        ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated|a_dpfifo_ev21:dpfifo|dpram_st01:FIFOram|altsyncram_0sj1:altsyncram2 ; work         ;
-;       |mux:U5|                                     ; 4 (4)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|mux:U5                                                                                                                         ; work         ;
-;       |p_emetteur:U4|                              ; 146 (146)         ; 144 (144)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|p_emetteur:U4                                                                                                                  ; work         ;
-;       |reg1:U3|                                    ; 17 (17)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|reg1:U3                                                                                                                        ; work         ;
+;       |mux:U5|                                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|mux:U5                                                                                                                         ; work         ;
+;       |p_emetteur:U4|                              ; 144 (144)         ; 144 (144)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|p_emetteur:U4                                                                                                                  ; work         ;
+;       |reg1:U3|                                    ; 18 (18)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|reg1:U3                                                                                                                        ; work         ;
+;       |sequenceur:U12|                             ; 19 (19)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|canal_tx:comp2|sequenceur:U12                                                                                                                 ; work         ;
 ;    |data_generator:comp1|                          ; 25 (25)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|data_generator:comp1                                                                                                                          ; work         ;
 ;    |decod_manchester:comp3|                        ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |bench_canal_tx|decod_manchester:comp3                                                                                                                        ; work         ;
 +----------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
@@ -263,9 +265,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
 ; Name                                                                                                                                                     ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
-; canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_c4n:auto_generated|altsyncram_g6b1:altsyncram2|ALTSYNCRAM                              ; AUTO ; Simple Dual Port ; 1450         ; 1            ; 1450         ; 1            ; 1450 ; None ;
+; canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_e4n:auto_generated|altsyncram_k6b1:altsyncram2|ALTSYNCRAM                              ; AUTO ; Simple Dual Port ; 1452         ; 1            ; 1452         ; 1            ; 1452 ; None ;
 ; canal_tx:comp2|fifo:U1|scfifo:scfifo_component|scfifo_7p21:auto_generated|a_dpfifo_ev21:dpfifo|dpram_st01:FIFOram|altsyncram_0sj1:altsyncram2|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 16           ; 8            ; 16           ; 8            ; 128  ; None ;
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |bench_canal_tx|canal_tx:comp2|sequenceur:U12|etat                                                                                                                                   ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+; Name     ; etat.m17 ; etat.m16 ; etat.m15 ; etat.m14 ; etat.m13 ; etat.m12 ; etat.m11 ; etat.m10 ; etat.m9 ; etat.m8 ; etat.m7 ; etat.m6 ; etat.m5 ; etat.m4 ; etat.m3 ; etat.m2 ; etat.m1 ; etat.m0 ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+; etat.m0  ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ;
+; etat.m1  ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 1       ;
+; etat.m2  ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 1       ;
+; etat.m3  ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 1       ;
+; etat.m4  ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 1       ;
+; etat.m5  ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0       ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; etat.m6  ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0       ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; etat.m7  ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0       ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; etat.m8  ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0       ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; etat.m9  ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; etat.m10 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; etat.m11 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; etat.m12 ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; etat.m13 ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; etat.m14 ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; etat.m15 ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; etat.m16 ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
+; etat.m17 ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 0       ; 1       ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -284,12 +313,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------------+----------------------------------------+
 ; Register name                               ; Reason for Removal                     ;
 +---------------------------------------------+----------------------------------------+
-; canal_tx:comp2|RAZ4                         ; Merged with canal_tx:comp2|RAZ3        ;
-; canal_tx:comp2|sel0                         ; Merged with canal_tx:comp2|dec_pr      ;
-; canal_tx:comp2|INC3                         ; Merged with canal_tx:comp2|LD1         ;
-; canal_tx:comp2|sel1                         ; Merged with canal_tx:comp2|DEC1        ;
 ; canal_tx:comp2|p_emetteur:U4|container[143] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 5       ;                                        ;
+; Total Number of Removed Registers = 1       ;                                        ;
 +---------------------------------------------+----------------------------------------+
 
 
@@ -298,12 +323,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 325   ;
+; Total registers                              ; 321   ;
 ; Number of registers using Synchronous Clear  ; 1     ;
 ; Number of registers using Synchronous Load   ; 13    ;
-; Number of registers using Asynchronous Clear ; 274   ;
+; Number of registers using Asynchronous Clear ; 271   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 276   ;
+; Number of registers using Clock Enable       ; 272   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -313,7 +338,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                          ; Fan out ;
 +--------------------------------------------------------------------------------------------+---------+
-; canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_c4n:auto_generated|dffe4 ; 1       ;
+; canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_e4n:auto_generated|dffe4 ; 1       ;
 ; Total number of inverted registers = 1                                                     ;         ;
 +--------------------------------------------------------------------------------------------+---------+
 
@@ -323,10 +348,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |bench_canal_tx|count[4]                                    ;
+; 3:1                ; 142 bits  ; 284 LEs       ; 142 LEs              ; 142 LEs                ; Yes        ; |bench_canal_tx|canal_tx:comp2|p_emetteur:U4|container[105] ;
 ; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |bench_canal_tx|canal_tx:comp2|reg1:U3|Container[10]        ;
-; 3:1                ; 142 bits  ; 284 LEs       ; 142 LEs              ; 142 LEs                ; Yes        ; |bench_canal_tx|canal_tx:comp2|p_emetteur:U4|container[126] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |bench_canal_tx|canal_tx:comp2|mux:U5|sel[0]                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |bench_canal_tx|count[4]                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 
 
@@ -340,7 +364,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_c4n:auto_generated|altsyncram_g6b1:altsyncram2 ;
+; Source assignments for canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0|shift_taps_e4n:auto_generated|altsyncram_k6b1:altsyncram2 ;
 +---------------------------------+--------------------+------+---------------------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                                        ;
 +---------------------------------+--------------------+------+---------------------------------------------------------------------------+
@@ -383,10 +407,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+----------------+-----------------------------------------------------------------------+
 ; WIDTH_BYTEENA  ; 1              ; Untyped                                                               ;
 ; NUMBER_OF_TAPS ; 1              ; Untyped                                                               ;
-; TAP_DISTANCE   ; 1452           ; Untyped                                                               ;
+; TAP_DISTANCE   ; 1454           ; Untyped                                                               ;
 ; WIDTH          ; 1              ; Untyped                                                               ;
 ; POWER_UP_STATE ; CLEARED        ; Untyped                                                               ;
-; CBXI_PARAMETER ; shift_taps_c4n ; Untyped                                                               ;
+; CBXI_PARAMETER ; shift_taps_e4n ; Untyped                                                               ;
 +----------------+----------------+-----------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -414,18 +438,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Number of entity instances ; 1                                                      ;
 ; Entity Instance            ; canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0 ;
 ;     -- NUMBER_OF_TAPS      ; 1                                                      ;
-;     -- TAP_DISTANCE        ; 1452                                                   ;
+;     -- TAP_DISTANCE        ; 1454                                                   ;
 ;     -- WIDTH               ; 1                                                      ;
 +----------------------------+--------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "canal_tx:comp2|C2:U8"                                                                ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; c2out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -434,8 +449,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Mon Jul 15 01:15:42 2019
+    Info: Processing started: Wed Jul 17 19:20:48 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bench_canal_tx -c bench_canal_tx
+Info: Found 2 design units, including 1 entities, in source file mux_entity.vhd
+    Info: Found design unit 1: mux_entity-amux
+    Info: Found entity 1: mux_entity
+Info: Found 2 design units, including 1 entities, in source file sequenceur.vhd
+    Info: Found design unit 1: sequenceur-asequenceur
+    Info: Found entity 1: sequenceur
 Info: Found 2 design units, including 1 entities, in source file C2.vhd
     Info: Found design unit 1: C2-AC2
     Info: Found entity 1: C2
@@ -493,7 +514,6 @@ Info (10041): Inferred latch for "inc" at bench_canal_tx.vhd(78)
 Info: Elaborating entity "data_generator" for hierarchy "data_generator:comp1"
 Warning (10036): Verilog HDL or VHDL warning at data_generator.vhd(22): object "r1" assigned a value but never read
 Info: Elaborating entity "canal_tx" for hierarchy "canal_tx:comp2"
-Warning (10036): Verilog HDL or VHDL warning at canal_tx .vhd(43): object "C2_out" assigned a value but never read
 Info: Elaborating entity "fifo" for hierarchy "canal_tx:comp2|fifo:U1"
 Info: Elaborating entity "scfifo" for hierarchy "canal_tx:comp2|fifo:U1|scfifo:scfifo_component"
 Info: Elaborated megafunction instantiation "canal_tx:comp2|fifo:U1|scfifo:scfifo_component"
@@ -539,38 +559,39 @@ Info: Elaborating entity "C2" for hierarchy "canal_tx:comp2|C2:U8"
 Info: Elaborating entity "RegL" for hierarchy "canal_tx:comp2|RegL:U9"
 Info: Elaborating entity "RegH" for hierarchy "canal_tx:comp2|RegH:U10"
 Info: Elaborating entity "Reg4" for hierarchy "canal_tx:comp2|Reg4:U11"
+Info: Elaborating entity "sequenceur" for hierarchy "canal_tx:comp2|sequenceur:U12"
 Info: Elaborating entity "decod_manchester" for hierarchy "decod_manchester:comp3"
 Info: Inferred 1 megafunctions from design logic
     Info: Inferred altshift_taps megafunction from the following design logic: "canal_tx:comp2|RegOut:U6|Container[1455]~0"
         Info: Parameter NUMBER_OF_TAPS set to 1
-        Info: Parameter TAP_DISTANCE set to 1452
+        Info: Parameter TAP_DISTANCE set to 1454
         Info: Parameter WIDTH set to 1
 Info: Elaborated megafunction instantiation "canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0"
 Info: Instantiated megafunction "canal_tx:comp2|RegOut:U6|altshift_taps:Container_rtl_0" with the following parameter:
     Info: Parameter "NUMBER_OF_TAPS" = "1"
-    Info: Parameter "TAP_DISTANCE" = "1452"
+    Info: Parameter "TAP_DISTANCE" = "1454"
     Info: Parameter "WIDTH" = "1"
-Info: Found 1 design units, including 1 entities, in source file db/shift_taps_c4n.tdf
-    Info: Found entity 1: shift_taps_c4n
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_g6b1.tdf
-    Info: Found entity 1: altsyncram_g6b1
-Info: Found 1 design units, including 1 entities, in source file db/cntr_rqf.tdf
-    Info: Found entity 1: cntr_rqf
+Info: Found 1 design units, including 1 entities, in source file db/shift_taps_e4n.tdf
+    Info: Found entity 1: shift_taps_e4n
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_k6b1.tdf
+    Info: Found entity 1: altsyncram_k6b1
+Info: Found 1 design units, including 1 entities, in source file db/cntr_tqf.tdf
+    Info: Found entity 1: cntr_tqf
 Info: Found 1 design units, including 1 entities, in source file db/cmpr_mdc.tdf
     Info: Found entity 1: cmpr_mdc
-Info: Found 1 design units, including 1 entities, in source file db/cntr_hah.tdf
-    Info: Found entity 1: cntr_hah
+Info: Found 1 design units, including 1 entities, in source file db/cntr_jah.tdf
+    Info: Found entity 1: cntr_jah
 Info: Registers with preset signals will power-up high
 Info: DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info: Implemented 461 device resources after synthesis - the final resource count might be different
+Info: Implemented 436 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 9 output pins
-    Info: Implemented 441 logic cells
+    Info: Implemented 416 logic cells
     Info: Implemented 9 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 264 megabytes
-    Info: Processing ended: Mon Jul 15 01:15:50 2019
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:06
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 263 megabytes
+    Info: Processing ended: Wed Jul 17 19:20:59 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:07
 
 

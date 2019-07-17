@@ -33,7 +33,7 @@ BEGIN
 			ELSE
 				C2EQF <= '0';
 			END IF;
-			IF (counter = 144) THEN
+			IF (counter = 143) THEN
 				C2EQ144 <= '1';
 			ELSE
 				C2EQ144 <= '0';

@@ -25,7 +25,7 @@ ARCHITECTURE acanal_tx OF canal_tx IS
 	SIGNAL empty : std_logic; -- fifo
 	SIGNAL manchester_out : std_logic_vector(15 DOWNTO 0); --manchester
 	SIGNAL LD1, DEC1 : std_logic; -- REG1 
-	SIGNAL sel0, sel1, sel2 : std_logic;-- MUX
+	SIGNAL sel : std_logic_vector(1 downto 0);-- MUX
 	SIGNAL mux_out : std_logic;
 	SIGNAL init_pr, dec_pr : std_logic; -- Preambule
 	SIGNAL Decregout : std_logic; -- Regout
@@ -47,10 +47,7 @@ ARCHITECTURE acanal_tx OF canal_tx IS
 	SIGNAL PreaumbuleDout : std_logic; -- Preambule
 	SIGNAL RegLOut : std_logic_vector(7 DOWNTO 0); -- REGL
 	SIGNAL RegHOut : std_logic_vector (7 DOWNTO 0); -- REGH
-	--------------------------------------------------------------
-	SIGNAL r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r16, r17, r18, r19, r20, r21, r22, r23 : std_logic; --SEQUENCEUR
-	SIGNAL e0, e1, e2, e3 : std_logic;
-	------------------------ component --------------------------
+		------------------------ component --------------------------
 	-----  manchester -----
 	COMPONENT manchester
 		PORT
@@ -92,8 +89,9 @@ ARCHITECTURE acanal_tx OF canal_tx IS
 	COMPONENT mux
 		PORT
 		(
-			h, R, sel0, sel1, sel2 : IN std_logic;
+			h, R : IN std_logic;
 			Reg1in : IN std_logic;
+		 sel : in std_logic_vector(1 downto 0);
 			emetteurPreambule : IN std_logic;
 			mux_out : OUT std_logic);
 
@@ -113,7 +111,6 @@ ARCHITECTURE acanal_tx OF canal_tx IS
 			C3 : IN std_logic_vector(15 DOWNTO 0);
 			sof, eof, Tx : OUT std_logic);
 	END COMPONENT;
-	-------------------------------SEQUENCEUR-------------------------- 
 
 	----------------------C3---------------------------
 	COMPONENT C3
@@ -131,8 +128,7 @@ ARCHITECTURE acanal_tx OF canal_tx IS
 		PORT
 		(
 			H, INC2, RAZ2 : IN std_logic;
-			C2EQF, C2EQ144 : OUT std_logic;
-			C2out : OUT std_logic_vector(7 DOWNTO 0)
+			C2EQF, C2EQ144 : OUT std_logic
 		);
 	END COMPONENT;
 	----------------------RegH---------------------------
@@ -178,80 +174,35 @@ ARCHITECTURE acanal_tx OF canal_tx IS
 --/* THIS UNIT IS MADE TO CONTROL EVERY SIGNAL COMING 
 --   FROM-TO ALL OTHER UNITS DEPENDING ON THE RESAULT OF EACH UNIT OPERATIONSµ
 --   AND COMMAND THE ACTIVATION BY CHANING FLAGS IN FORM OF A SIGNAL */ 
-BEGIN
-	r1 <= NOT(e3) AND NOT(e2) AND NOT(e1) AND NOT(e0);
-	r2 <= empty AND NOT(e3) AND NOT(e2) AND NOT(e1) AND e0;
-	r3 <= NOT(empty) AND NOT(e3) AND NOT(e2) AND NOT(e1) AND e0;
-	r4 <= NOT(e3) AND NOT(e2) AND e1 AND NOT(e0);
-	r5 <= NOT(C2EQ144) AND NOT(e3) AND NOT(e2) AND e1 AND e0;
-	r6 <= C2EQ144 AND NOT(e3) AND NOT(e2) AND e1 AND e0;
-	r7 <= NOT(e3) AND e2 AND NOT(e1) AND NOT(e0);
-	r8 <= NOT(e3) AND e2 AND NOT(e1) AND e0;
-	r9 <= NOT(C2EQF) AND NOT(e3) AND e2 AND e1 AND NOT(e0);
-	r10 <= C2EQF AND NOT(e3) AND e2 AND e1 AND NOT(e0);
-	r11 <= C3EQ13 AND NOT(e3) AND e2 AND e1 AND e0;
-	r12 <= NOT(C3EQ13) AND NOT(e3) AND e2 AND e1 AND e0;
-	r13 <= NOT(empty) AND e3 AND NOT(e2) AND NOT(e1) AND NOT(e0);
-	r14 <= empty AND e3 AND NOT(e2) AND NOT(e1) AND NOT(e0);
-	r15 <= C3EQ14 AND e3 AND NOT(e2) AND NOT(e1) AND e0;
-	r16 <= e3 AND NOT(e2) AND e1 AND NOT(e0);
-	r17 <= NOT(C3EQ14) AND e3 AND NOT(e2) AND NOT(e1) AND e0;
-	r18 <= C3EQREG4 AND e3 AND NOT(e2) AND e1 AND e0;
-	r19 <= NOT(C3EQREG4) AND e3 AND NOT(e2) AND e1 AND e0;
-	r20 <= NOT(sof) AND e3 AND e2 AND NOT(e1) AND NOT(e0);
-	r21 <= sof AND e3 AND e2 AND NOT(e1) AND NOT(e0);
-	r22 <= NOT(eof) AND e3 AND e2 AND NOT(e1) AND e0;
-	r23 <= e3 AND e2 AND e1 AND NOT(e0);
-	PROCESS (h, R)
-	BEGIN
-		IF R = '1' THEN
-			e0 <= '0';
-			e1 <= '0';
-			e2 <= '0';
-			e3 <= '0';
-			RAZ2 <= '0';
-			RAZ3 <= '0';
-			RAZ4 <= '0';
-			ld2 <= '0';
-			ld3 <= '0';
-			ld4 <= '0';
-			init_pr <= '0';
-			dec_pr <= '0';
-			read_fifo <= '0';
-			Decregout <= '0';
-			LD1 <= '0';
-			DEC1 <= '0';
-			sel0 <= '0';
-			sel1 <= '0';
-			sel2 <= '0';
-			inc3 <= '0';
-			INC2 <= '0';
-		ELSIF falling_edge(h) THEN
-			e0 <= r1 OR r2 OR r4 OR r7 OR r9 OR r10 OR r12 OR r17 OR r21 OR r22;--
-			e1 <= r3 OR r4 OR r5 OR r6 OR r8 OR r10 OR r13 OR r15 OR r17;
-			e2 <= r6 OR r7 OR r8 OR r9 OR r10 OR r13 OR r18 OR r20 OR r21 OR r22 OR r23;--
-			e3 <= r6 OR r11 OR r12 OR r13 OR r14 OR r15 OR r16 OR r17 OR r18 OR r19 OR r20 OR r21 OR r22; -- 
-			raz2 <= r1 OR r23;
-			raz3 <= r1;
-			raz4 <= r1;
-			init_pr <= r3;
-			Decregout <= r4 OR r8 OR r20 OR r21 OR r22;--
-			dec_pr <= r4;
-			ld2 <= r11;
-			ld3 <= r15;
-			ld4 <= r16;
-			inc2 <= r4 OR r8;
-			sel0 <= r4;
-			sel2 <= r20 OR r21;
-			read_fifo <= r23;
-			ld1 <= r7;
-			dec1 <= r8;
-			sel1 <= r8;
-			inc3 <= r7;
-
-		END IF;
-	END PROCESS;
---------------------COMPONENTS-----------------------------------------------------------
+COMPONENT sequenceur is
+port(H,R: in std_logic;
+	 C3EQREG4In : in std_logic;
+	 C3EQ13In   : in std_logic;
+	 C3EQ14In   : in std_logic;
+	 EofIn      : in std_logic;
+	 SofIn      : in std_logic;
+	 emptyIn    : in std_logic;
+	 C2EQFIn    : in std_logic;
+	 C2EQ144In  : in std_logic;
+	 ---------------------------
+	 readOut    : out std_logic;
+	 LD1Out     : out std_logic;
+	 LD2Out     : out std_logic;
+	 LD3Out     : out std_logic;
+	 DEC1Out    : out std_logic;
+	 selOut     : out std_logic_vector(1 downto 0);
+	 init_prOut : out std_logic;
+	 dec_prOut  : out std_logic;
+	 INC2Out     : out std_logic;
+	 RAZ2Out    : out std_logic;
+	 INC3Out    : out std_logic;
+	 RAZ3Out    : out std_logic;
+	 LD4Out     : out std_logic;
+	 RAZ4Out    : out std_logic;
+	 Decregout : out std_logic);
+end component;
+begin 
+--------------------PORTMAPS-----------------------------------------------------------
 --/* THIS UNIT IS MADE TO GET DATA FROM FIFO,
 --   PASS IT INTO MANCHESTER ENCODER,
 --   AND PASS THE RESULT TO A SHIFT REGISTER FOR PARALLER-SERIES CONVERSION 
@@ -267,18 +218,21 @@ BEGIN
 	U4 : p_emetteur PORT
 	MAP (h, R, Dec_pr, init_pr, PreaumbuleDout);
 	U5 : mux PORT
-	MAP (h, R, sel0, sel1, sel2, Reg1_out, PreaumbuleDout, mux_out);
+	MAP (h, R,  Reg1_out,sel, PreaumbuleDout, mux_out);
 	U6 : RegOut PORT
 	MAP (h, R, DecRegout, mux_out, C3EQREG4, C3_out, sof, eof, Tx);
 	U7 : C3 PORT
 	MAP (h, INC3, RAZ3, C3EQ13, C3EQ14, C3_out);
 	U8 : C2 PORT
-	MAP (h, INC2, RAZ2, C2EQF, C2EQ144, C2_out);
+	MAP (h, INC2, RAZ2, C2EQF, C2EQ144);
 	U9 : RegL PORT
 	MAP (h, R, LD2, fifo_out, RegLOut);
 	U10 : RegH PORT
 	MAP (h, R, LD3, fifo_out, RegHOut);
 	U11 : Reg4 PORT
 	MAP (h, RAZ4, LD4, C3_out, RegLOut, RegHOut, C3EQREG4);
-
+	U12 : sequenceur PORT
+		MAP (	h,R,C3EQREG4,
+				C3EQ13,C3EQ14,
+				EOF, SOF, empty,C2EQF, C2EQ144, read_fifo, LD1, LD2, LD3, DEC1, sel, init_pr, dec_pr, INC2, RAZ2, INC3, Raz3, LD4, RAZ4, Decregout);
 END ARCHITECTURE;
